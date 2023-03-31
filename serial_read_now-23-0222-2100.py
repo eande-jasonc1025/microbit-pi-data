@@ -20,13 +20,10 @@ while True:
         dt = datetime.now()
         datestamp = str(dt)[:16]
         ###jwc o temp, light = x.decode().split(':')
-        ###jwc 23-0310-1120 y id, te, li, co = x.decode().split(',')
-        ###jwc n id, te, li, co, m1, m2, m3, m4 = x.decode().split('|')
+        id, te, li, co = x.decode().split(',')
 
         ###jwc o newData = [datestamp,temp,light]
-        ###jwc 23-0310-1120 y newData = [datestamp, id, te, li, co]
-        ###jwc n newData = [datestamp, id, te, li, co, m1, m2, m3, m4]
-        newData = [datestamp, x]
+        newData = [datestamp, id, te, li, co]
 
         print(newData)
         with open('test.csv', 'a', newline='') as f_object:
